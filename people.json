@@ -1,0 +1,28 @@
+[
+    {
+        "name": "John Dough",
+        "age": 69.0,
+        "address": {
+            "street": "240 School St",
+            "town": "Somerville",
+            "ZipCode": 02145
+        },
+        "BodyCount": 420.0,
+        "height": 80085,
+        "married": false,
+        "lucky_numbers": [69, 420]
+    },
+    {
+        "name": "Walgreens Man",
+        "age": 69.0,
+        "address": {
+            "street": "Seneca St",
+            "town": "Hollywood",
+            "ZipCode": 10245
+        },
+        "BodyCount": 1337,
+        "height": 6969,
+        "married": false,
+        "lucky_numbers": [13, 666, 777]
+    }
+]

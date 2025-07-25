@@ -9,9 +9,10 @@
 #include "jimp.h"
 
 #define tag(...)
+#define array(...)
 
-#include "person.h"
-#include "serdec_person.h"
+#include "people.h"
+#include "serdec_people.h"
 
 int main(int argc, char **argv)
 {
@@ -24,6 +25,7 @@ int main(int argc, char **argv)
     }
     const char *file_path = shift(argv, argc);
 
+    People people = {0};
     Person person = {0};
     String_Builder sb = {0};
     Jimp jimp = {0};
@@ -32,13 +34,14 @@ int main(int argc, char **argv)
     if (!read_entire_file(file_path, &sb)) return 1;
 
     jimp_begin(&jimp, file_path, sb.items, sb.count);
-    if (!jimp_Person(&jimp, &person)) return 1;
+    if (!jimp_People(&jimp, &people)) return 1;
 
     printf("Parsed C struct from %s:\n", file_path);
+    print_People(people);
     print_Person(person);
     printf("\n");
     printf("Serialized back as JSON:\n");
-    jim_Person(&jim, person);
+    jim_People(&jim, people);
     fwrite(jim.sink, jim.sink_count, 1, stdout);
     printf("\n");
 

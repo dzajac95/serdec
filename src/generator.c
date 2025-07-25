@@ -13,14 +13,14 @@ int main(int argc, char **argv)
 {
     const char *program_name = shift(argv, argc);
 
-    if (argc < 0) {
+    if (argc <= 0) {
         usage(program_name);
         fprintf(stderr, "ERROR: no input is provided\n");
         return 1;
     }
     const char *input_path = shift(argv, argc);
 
-    if (argc < 0) {
+    if (argc <= 0) {
         usage(program_name);
         fprintf(stderr, "ERROR: no output is provided\n");
         return 1;
@@ -31,13 +31,12 @@ int main(int argc, char **argv)
 
     if (!read_entire_file(input_path, &sb)) return 1;
 
-    static char string_store[1024];
 
-    stb_lexer l = {0};
-    stb_c_lexer_init(&l, sb.items, sb.items + sb.count, string_store, sizeof(string_store));
+    Serdec serdec = {0};
+    serdec_init(&serdec, input_path, sb);
 
     Structs structs = {0};
-    if (!parse_structs(&l, input_path, &structs)) return 1;
+    if (!parse_structs(&serdec, &structs)) return 1;
 
     String_Builder out = {0};
 

@@ -31,7 +31,7 @@ int main(int argc, char **argv)
     Cmd cmd = {0};
 
     if (!build_executable(&cmd, SRC_FOLDER"generator.c", BUILD_FOLDER"generator")) return 1;
-    cmd_append(&cmd, BUILD_FOLDER"generator", SRC_FOLDER"person.h", BUILD_FOLDER"serdec_person.h");
+    cmd_append(&cmd, BUILD_FOLDER"generator", SRC_FOLDER"people.h", BUILD_FOLDER"serdec_people.h");
     if (!cmd_run_sync_and_reset(&cmd)) return 1;
     if (!build_executable(&cmd, SRC_FOLDER"parser.c", BUILD_FOLDER"parser")) return 1;
 
