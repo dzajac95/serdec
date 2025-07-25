@@ -16,3 +16,9 @@ $ ./build/parser ./person.json
 ```
 
 The automatically generated Serializer/Deserializer can be found in `./build/serdec_person.h`.
+
+## Screencast
+
+It was developed on a livestream. Watch it here:
+
+[![screencast](./screencast.png)](https://www.youtube.com/watch?v=hnM6aSpWJ8c)
