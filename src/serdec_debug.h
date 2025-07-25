@@ -1,3 +1,4 @@
+// This is a Serdec Generator for debug printing types
 #ifndef SERDEC_DEBUG_H_
 #define SERDEC_DEBUG_H_
 

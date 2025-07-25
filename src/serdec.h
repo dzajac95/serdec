@@ -1,3 +1,5 @@
+// This is the "base" of Serdec which only parses a small subset of C which then
+// can be used by specific generators like serdec_jim.h and serdec_debug.h.
 #ifndef SERDEC_H_
 #define SERDEC_H_
 

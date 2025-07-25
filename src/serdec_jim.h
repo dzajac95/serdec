@@ -1,3 +1,4 @@
+// This is a Serdec Generator for jim.h/jimp.h immediate serialization/deserialization libraries.
 #ifndef SERDEC_JIM_H_
 #define SERDEC_JIM_H_
 
